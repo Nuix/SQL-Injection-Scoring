@@ -7,7 +7,7 @@ View the GitHub project [here](https://github.com/Nuix/SQL-Injection-Scoring) or
 
 # Overview
 
-This project looks to identify and score potential SQL injections.  This is accomplished using a Worker Side Script.  When an item is of mime type `text/x-common-log-entry` or `application/vnd.ms-iis-log-entry`, it then looks to match 1 or more regular expressions against the properties metadata of an item, assigning a score related to each regular expression.
+This project looks to identify and score potential SQL injections.  This is accomplished using a Worker Side Script.  When an item is of mime type `text/x-common-log-entry` or `application/vnd.ms-iis-log-entry`, it then looks to match 1 or more regular expressions against the properties metadata of an item, assigning a score based on the sum of the regular expressions matched.
 
 | Regular Expression | Score |
 |--------------------|-------|
@@ -42,10 +42,9 @@ Once the saved search is dropped into the Nuix Saved Searches directory, it appe
 2. Open the **Evidence Processing Settings** dialog.
 3. On the **Evidence Processing Settings** dialog under **Family Text Settings**, ensure that the check box for **Hide immaterial items (text rolled up to parent)** is cleared.
 4. Under **Item Content Settings**, ensure that the check boxes for **Extract named entities from text** is selected.
-5. Click **OK**.
-6. On the **Evidence Processing Settings** dialog, click the **Worker Script** tab.
-7. Select the **ruby** radio button and paste the contents of [WSS_SQLi_Scoring.rb](https://github.com/Nuix/SQL-Injection-Scoring/blob/master/Project/WSS_SQLi_Scoring.rb) into the text field.
-8. Click **OK** and finish ingesting the evidence you have specified.
+5. On the **Evidence Processing Settings** dialog, click the **Worker Script** tab.
+6. Select the **ruby** radio button and paste the contents of [WSS_SQLi_Scoring.rb](https://github.com/Nuix/SQL-Injection-Scoring/blob/master/Project/WSS_SQLi_Scoring.rb) into the text field.
+7. Click **OK** and finish ingesting the evidence you have specified.
 
 ## Reviewing the Results
 
