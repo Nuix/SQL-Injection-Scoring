@@ -1,14 +1,14 @@
 def nuix_worker_item_callback(worker_item)
 
 	rules = {
-		"or[0-9A-F%\s\(\/*]+\d=\d" => 25,
-		"like[\s%0-9A-F\/*]+['\"]%" => 50,
-		"or[0-9%A-F\s\/*]+['\"].['\"]=['\"]" => 25,
-		"sleep[\s%0-9A-F\/*]+\d" => 50,
-		"waitfor[%0-9A-F\s\/*]+delay" => 75,
-		"select[\s%A-F0-9\/*]+" => 50,
+		"or[0-9A-F%\\s\\(\\/*]+\\d=\\d" => 25,
+		"like[\\s%0-9A-F\\/*]+['\"]%" => 50,
+		"or[0-9%A-F\\s\\/*]+['\"].['\"]=['\"]" => 25,
+		"sleep[\\s%0-9A-F\\/*]+\\d" => 50,
+		"waitfor[%0-9A-F\\s\\/*]+delay" => 75,
+		"select[\\s%A-F0-9\\/*]+" => 50,
 		"union.*?select" => 75,
-		"exec[\s%A-F0-9\/*]+(xp|sp|master)" => 75,
+		"exec[\\s%A-F0-9\\/*]+(xp|sp|master)" => 75,
 		"--" => 10,
 	}
 
