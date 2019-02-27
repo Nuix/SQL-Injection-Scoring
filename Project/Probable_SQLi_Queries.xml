@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<search-parameters>
+  <search-string>custom-metadata:"SQLi Score":[100 to 5000]</search-string>
+  <filter name="Query">
+    <name>exclusion</name>
+    <query>has-exclusion:0</query>
+    <fields>content,properties,name,path-name,evidence-metadata</fields>
+  </filter>
+  <fields>content,properties,name,path-name,evidence-metadata</fields>
+</search-parameters>
+
