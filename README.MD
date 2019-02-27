@@ -18,7 +18,7 @@ This project looks to identify and score potential SQL injections.  This is acco
 | `waitfor[%0-9A-F\s\/*]+delay` | 75 |
 | `select[\s%A-F0-9\/*]+` | 50 |
 | `union.*?select` | 75 |
-| `exec[\s%A-F0-9\/*]+(xp|sp|master)` | 75 |
+| `exec[\s%A-F0-9\/*]+(xp\|sp\|master)` | 75 |
 | `--` | 10 |
 
 The resulting score is then recorded as a custom metadata field named `SQLi Score` against the item.  If the score is greater than 100, the item will also have a tag named `CTAT Intel/SQLi Detected` applied.
