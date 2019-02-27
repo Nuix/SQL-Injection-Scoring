@@ -12,16 +12,18 @@ def nuix_worker_item_callback(worker_item)
 		"--" => 10,
 	}
 
-
-  source_item = worker_item.source_item
+	source_item = worker_item.source_item
 	begin
 		if(source_item.type.name =~ /text\/x-common-log-entry/ or source_item.type.name =~ /application\/vnd.ms-iis-log-entry/)
 			score = 0
 			data =  source_item.properties.to_s
+			
 			rules.keys.each do |k|
 				score += rules[k] if data =~ /#{k}/i
 			end
+			
 			worker_item.add_custom_metadata("SQLi Score", score, "integer", "user")
+
 			if score >= 100
 				worker_item.add_tag("CTAT Intel/SQLi Detected")
 			end
