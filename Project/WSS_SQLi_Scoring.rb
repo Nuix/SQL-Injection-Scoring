@@ -1,6 +1,7 @@
 # Scores properties based on rules.
 # Adds custom metadata "SQLi Score"
 # Adds tag "CTAT Intel|SQLi Detected" if score >= 100
+# @version 1.1.0
 
 TYPES = [%r{text/x-common-log-entry}, %r{application/vnd.ms-iis-log-entry}].freeze
 RULES = {
